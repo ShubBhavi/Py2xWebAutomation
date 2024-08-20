@@ -33,3 +33,5 @@ class LoginPage():
         self.get_password().send_keys(pwd)
         self.get_login_button().click()
 
+    def err_msg_text(self):
+        return self.get_error_message().text
