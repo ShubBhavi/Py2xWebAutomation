@@ -11,7 +11,7 @@ class Login_Facebook():
     password=(By.XPATH,"//input[@id='pass']")
     login=(By.NAME,"login")
     verification=(By.XPATH,"//span[contains(text(),'Shubham') and contains(text(),'ನಿಮ್ಮ')]")
-
+    error_message=(By.XPATH,"//div[contains(text(),'The password that')]")
 
     def get_email(self):
         return self.driver.find_element(*Login_Facebook.username)
@@ -25,6 +25,9 @@ class Login_Facebook():
     def verification_name(self):
         return self.driver.find_element(*Login_Facebook.verification)
 
+    def error(self):
+        return self.driver.find_element(*Login_Facebook.error_message)
+
 
 
     def login_to_facbook(self,user,pwd):
@@ -36,4 +39,6 @@ class Login_Facebook():
     def verify(self):
         return self.verification_name().text
 
+    def New_error(self):
+        return self.error().text
 

@@ -18,6 +18,6 @@ def step2(context,username,password):
 
 @then('I get the {message}')
 def step3(context,message):
-    error_message=context.driver.find_element(By.XPATH,"//div[@id='js-notification-box-msg']").text
+    error_message=context.driver.find_element(By.XPATH,"//div[@data-qa='rixawilomi']").text
     print(error_message)
-    # assert message in error_message
+    # assert message == error_message

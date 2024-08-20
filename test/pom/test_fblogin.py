@@ -20,3 +20,13 @@ class Test_Login_FB():
         name=login_page.verify()
         print(name)
 
+
+    @pytest.mark.negative
+    @pytest.mark.usefixtures("setup")
+    def test_login(self,setup):
+        driver=setup
+        login_page=Login_Facebook(driver)
+        login_page.login_to_facbook(user="admin",pwd="admin")
+        time.sleep(10)
+        name=login_page.New_error()
+        print(name)
